@@ -1,0 +1,10 @@
+---
+contentdir: "content"
+layoutdir: "layouts"
+publishdir: "xuxianmei.github.io"
+indexes:
+  category: "categories"
+baseurl: "https://xuxianmei.github.io/"
+title: "TJoy's Blog"
+canonifyurls: true
+---
