@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TJoy&#39;s Blog </title>
+    <link>https://xuxianmei.github.io/post/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2016-04-24 16:56:42 &#43;0800 CST</updated>
+
+    
+      
+        <item>
+          <title> Markdown语法总结</title>
+          <link>https://xuxianmei.github.io/post/markdown/</link>
+          <pubDate>Sun, 24 Apr 2016 16:56:42 CST</pubDate>
+          <author></author>
+          <guid>https://xuxianmei.github.io/post/markdown/</guid>
+          <description>
+
+&lt;h2 id=&#34;语法介绍:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;语法介绍&lt;/h2&gt;
+
+&lt;h3 id=&#34;区块元素:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;区块元素&lt;/h3&gt;
+
+&lt;p&gt;一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。&lt;/p&gt;
+
+&lt;p&gt;Markdown 允许段落内的强迫换行（插入换行符），如果你确实想要依赖 Markdown 来插入 &lt;br \/&gt; 标签的话，在插入处先按入两个以上的空格然后回车。&lt;/p&gt;
+
+&lt;p&gt;但是简单地 [ 每个换行都转换为 &lt;br \/&gt; ] 的方法在 Markdown 中并不适合， Markdown 中 email 式的 &lt;strong&gt;区块引用&lt;/strong&gt; 和 多段落的 &lt;strong&gt;列表&lt;/strong&gt; 在使用换行来排版的时候，不但更好用，还更方便阅读。&lt;/p&gt;
+
+&lt;h4 id=&#34;标题:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;标题&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;# 这是 H1
+## 这是 H2
+###### 这是 H6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;区块引用:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;区块引用&lt;/h4&gt;
+
+&lt;p&gt;Markdown 标记区块引用是使用类似 email 中用 &amp;gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &amp;gt;  ，下面这个就是使用了区块引用现实的的效果。
+&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&amp;gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
+
+&lt;p&gt;区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &amp;gt; ：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is the first level of quoting.
+&amp;gt;
+&amp;gt; &amp;gt; This is nested blockquote.
+&amp;gt;
+&amp;gt; Back to the first level.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：&lt;/p&gt;
+
+&lt;h4 id=&#34;列表:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;列表&lt;/h4&gt;
+
+&lt;p&gt;Markdown 支持有序列表和无序列表。&lt;/p&gt;
+
+&lt;p&gt;无序列表使用星号、加号或是减号作为列表标记：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* 列表1
+* 列表2   
+* 列表3  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;等同于：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Red
+*   Green
+*   Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;也等同于：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-   Red
+-   Green
+-   Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有序列表则使用数字接着一个英文句点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  Bird    
+2.  McHale
+3.  Parish  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。
+要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要在列表项目内放进引用，那 &amp;gt; 就需要缩进：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   A list item with a blockquote:
+
+    &amp;gt; This is a blockquote
+    &amp;gt; inside a list item.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   一列表项包含一个列表区块：
+    &amp;lt;代码写在这&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;代码区块:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;代码区块&lt;/h4&gt;
+
+&lt;p&gt;和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 &lt;pre\&gt; 和 &lt;code\&gt; 标签来把代码区块包起来。&lt;/p&gt;
+
+&lt;p&gt;要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;这是一个普通段落：
+    这是一个代码区块。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown 会转换成：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;这是一个普通段落：&amp;lt;/p&amp;gt;    
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;这是一个代码区块。
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Here is an example of AppleScript:
+    tell application &amp;quot;Foo&amp;quot;
+        beep
+    end tell       
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会被转换为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &amp;quot;Foo&amp;quot;
+   beep
+end tell
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。&lt;/p&gt;
+
+&lt;h4 id=&#34;分隔线:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;分隔线&lt;/h4&gt;
+
+&lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* * *
+*** 
+*****   
+- - -   
+---------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;区段元素:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;区段元素&lt;/h3&gt;
+
+&lt;p&gt;####链接
+Markdown 支持两种形式的链接语法： &lt;strong&gt;行内式&lt;/strong&gt;和&lt;strong&gt;参考式&lt;/strong&gt;两种形式。
+不管是哪一种，链接文字都是用 &lt;strong&gt;[方括号]&lt;/strong&gt; 来标记。&lt;/p&gt;
+
+&lt;p&gt;要建立一个&lt;strong&gt;行内式&lt;/strong&gt;的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is [an example](http://example.com/ &amp;quot;Title&amp;quot;) inline link.
+[This link](http://example.net/) has no title attribute.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会产生：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;
+an example&amp;lt;/a&amp;gt; inline link.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no
+title attribute.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;参考式&lt;/strong&gt;的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is [an example][id] reference-style link.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接着，在文件的任意处，你可以把这个标记的链接内容定义出来：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;链接内容定义的形式为：
+&amp;gt; * 方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字
+&amp;gt; * 接着一个冒号
+&amp;gt; *接着一个以上的空格或制表符
+&amp;gt; * 接着链接的网址
+&amp;gt; * 选择性地接着 title 内容，可以用单引号、双引号或是括弧包着&lt;/p&gt;
+
+&lt;p&gt;下面这三种链接的定义都是相同：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [foo]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
+    [foo]: http://example.com/  &#39;Optional Title Here
+    [foo]: http://example.com/  (Optional Title Here)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;隐式链接标记功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 &amp;ldquo;Google&amp;rdquo; 链接到 google.com，你可以简化成：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Google][]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后定义链接内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Google]: http://google.com/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Visit [Daring Fireball][] for more information.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后接着定义链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Daring Fireball]: http://daringfireball.net/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。&lt;/p&gt;
+
+&lt;p&gt;下面是一个参考式链接的范例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+[1]: http://google.com/        &amp;quot;Google&amp;quot;
+[2]: http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
+[3]: http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面两种写法都会产生下面的 HTML。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&amp;quot;htt                p://google.com/&amp;quot;
+title=&amp;quot;Google&amp;quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from
+&amp;lt;a href=&amp;quot;http://search.yahoo.com/&amp;quot; title=&amp;quot;Yahoo Se  arch&amp;quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt;
+or &amp;lt;a href=&amp;quot;http://search.msn.com/&amp;quot; title=&amp;quot;MSN Sea  rch&amp;quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google](http://g  oogle.com/ &amp;quot;Google&amp;quot;)
+than from [Yahoo](http://search.yahoo.com/ &amp;quot;Yahoo   Search&amp;quot;) or
+[MSN](http://search.msn.com/ &amp;quot;MSN Search&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。&lt;/p&gt;
+
+&lt;p&gt;使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。&lt;/p&gt;
+
+&lt;h4 id=&#34;强调:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;强调&lt;/h4&gt;
+
+&lt;p&gt;Markdown 使用星号（*）和底线（_）作为标记强调字词的符号，被 * 或 _ 包围的字词会被转成用 &lt;em\&gt; 标签包围，用两个 * 或 _ 包起来的话，则会被转成 &amp;lt;strong&amp;gt;，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*single asterisks*
+_single underscores_
+**double asterisks**
+__double underscores__
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会转成：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;
+&amp;lt;em&amp;gt;single underscores&amp;lt;/em&amp;gt;
+&amp;lt;strong&amp;gt;double asterisks&amp;lt;/strong&amp;gt;
+&amp;lt;strong&amp;gt;double underscores&amp;lt;/strong&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;代码:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;代码&lt;/h4&gt;
+
+&lt;p&gt;如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Use the `printf()` function.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会产生：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段语法会产生：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A single backtick in a code span: `` ` ``
+
+A backtick-delimited string in a code span: `` `foo` ``
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会产生：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;A single backtick in a code span: &amp;lt;code&amp;gt;`&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;A backtick-delimited string in a code span: &amp;lt;code&amp;gt;`foo`&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;图片:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;图片&lt;/h4&gt;
+
+&lt;p&gt;很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。
+Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： &lt;strong&gt;行内式&lt;/strong&gt; 和 &lt;strong&gt;参考式&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;行内式的图片语法看起来像是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;详细叙述如下：
+&amp;gt; * 一个惊叹号 !
+&amp;gt; * 接着一个方括号，里面放上图片的替代文字
+&amp;gt; * 接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 &amp;lsquo;title&amp;rsquo; 文字。&lt;/p&gt;
+
+&lt;p&gt;参考式的图片语法则长得像这样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![Alt text][id]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: url/to/image  &amp;quot;Optional title attribute&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 &lt;img&gt; 标签。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;其它&lt;/h3&gt;
+
+&lt;h4 id=&#34;自动链接:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;自动链接&lt;/h4&gt;
+
+&lt;p&gt;Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.com/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown 会转为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://example.com/&amp;quot;&amp;gt;http://example.com/&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;反斜杠:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;反斜杠&lt;/h4&gt;
+
+&lt;p&gt;Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 &lt;em&gt; 标签），你可以在星号的前面加上反斜杠：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\*literal asterisks\*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\   反斜线
+`   反引号
+*   星号
+_   底线
+{}  花括号
+[]  方括号
+()  括弧
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   惊叹号
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;注：排版布局、段落啥的，主要使用区块引用和列表来完成。&lt;/code&gt;
+文章引用:&lt;a href=&#34;http://www.appinn.com/markdown/#precode&#34;&gt;http://www.appinn.com/markdown/#precode&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
