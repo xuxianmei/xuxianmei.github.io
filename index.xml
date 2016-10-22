@@ -382,8 +382,9 @@ _   底线
 !   惊叹号
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;注：排版布局、段落啥的，主要使用区块引用和列表来完成。&lt;/code&gt;
-文章引用:&lt;a href=&#34;http://www.appinn.com/markdown/#precode&#34;&gt;http://www.appinn.com/markdown/#precode&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;注：排版布局、段落啥的，主要使用区块引用和列表来完成。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;文章引用:&lt;a href=&#34;http://www.appinn.com/markdown/#precode&#34;&gt;http://www.appinn.com/markdown/#precode&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
