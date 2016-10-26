@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TJoy&#39;s Blog</title>
+    <link>https://xuxianmei.github.io/categories/hugo/index.xml</link>
+    <description>Recent content on TJoy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <atom:link href="https://xuxianmei.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title> Hugo 内容之Front Matter</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BFront%20Matter/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BFront%20Matter/</guid>
+      <description>
+
+&lt;p&gt;增强Hugo的特性之一。
+主要用于为content添加和设置需要使用到的元数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;支持格式&#34;&gt;支持格式&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TOML 通过&amp;rsquo;+++&amp;lsquo;识别&lt;/li&gt;
+&lt;li&gt;YAML 通过&amp;rsquo;&amp;mdash;&amp;lsquo;识别&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JSON 通过 &amp;lsquo;{ }&amp;rsquo; 大括号对&lt;/p&gt;
+
+&lt;h3 id=&#34;例子&#34;&gt;例子：&lt;/h3&gt;
+
+&lt;h4 id=&#34;toml&#34;&gt;TOML&lt;/h4&gt;
+
+&lt;p&gt;+++
+title = &amp;ldquo;spf13-vim 3.0 release and new website&amp;rdquo;
+description = &amp;ldquo;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;rdquo;
+tags = [ &amp;ldquo;.vimrc&amp;rdquo;, &amp;ldquo;plugins&amp;rdquo;, &amp;ldquo;spf13-vim&amp;rdquo;, &amp;ldquo;vim&amp;rdquo; ]
+date = &amp;ldquo;2012-04-06&amp;rdquo;
+categories = [
+  &amp;ldquo;Development&amp;rdquo;,
+  &amp;ldquo;VIM&amp;rdquo;
+]
+slug = &amp;ldquo;spf13-vim-3-0-release-and-new-website&amp;rdquo;
++++
+这以后存放文件的内容content&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;yaml&#34;&gt;YAML&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;spf13-vim 3.0 release and new website&amp;quot;
+description: &amp;quot;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;quot;
+tags: [ &amp;quot;.vimrc&amp;quot;, &amp;quot;plugins&amp;quot;, &amp;quot;spf13-vim&amp;quot;, &amp;quot;vim&amp;quot; ]
+lastmod: 2015-12-23
+date: &amp;quot;2012-04-06&amp;quot;
+categories:
+  - &amp;quot;Development&amp;quot;
+  - &amp;quot;VIM&amp;quot;
+slug: &amp;quot;spf13-vim-3-0-release-and-new-website&amp;quot;
+---
+这以后存放文件的内容content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;json&#34;&gt;JSON&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;     {
+        &amp;quot;title&amp;quot;: &amp;quot;spf13-vim 3.0 release and new website&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;quot;,
+        &amp;quot;tags&amp;quot;: [ &amp;quot;.vimrc&amp;quot;, &amp;quot;plugins&amp;quot;, &amp;quot;spf13-vim&amp;quot;, &amp;quot;vim&amp;quot; ],
+        &amp;quot;date&amp;quot;: &amp;quot;2012-04-06&amp;quot;,
+        &amp;quot;categories&amp;quot;: [
+            &amp;quot;Development&amp;quot;,
+            &amp;quot;VIM&amp;quot;
+        ],
+        &amp;quot;slug&amp;quot;: &amp;quot;spf13-vim-3-0-release-and-new-website&amp;quot;
+}
+
+    这以后存放文件的内容content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;变量&#34;&gt;变量&lt;/h3&gt;
+
+&lt;p&gt;Hugo已经预定义了一些变量。用户也可以创建任何想要的变量。
+自定义的变量存放到Params当中。字段名称一般小写。
+比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Params:
+    camelCase:true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;必需变量&#34;&gt;必需变量&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt; 内容的标题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;description&lt;/strong&gt; 内容的描述&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;date&lt;/strong&gt; 将来用来排序的时间&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;taxonomies&lt;/strong&gt; 使用 tags和categories 的字段值。&lt;/p&gt;
+
+&lt;h3 id=&#34;可选变量&#34;&gt;可选变量&lt;/h3&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;aliases&lt;/strong&gt;  An array of one or more aliases (e.g. old published path of a renamed content) that would be created to redirect to this content. See Aliases for details.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;draft&lt;/strong&gt; If true, the content will not be rendered unless hugo is called with &amp;ndash;buildDrafts&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;publishdate&lt;/strong&gt; If in the future, content will not be rendered unless hugo is called with &amp;ndash;buildFuture&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;expirydate&lt;/strong&gt; Content already expired will not be rendered unless hugo is called with &amp;ndash;buildExpired&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;type&lt;/strong&gt; The type of the content (will be derived from the directory automatically if unset)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;isCJKLanguage&lt;/strong&gt; If true, explicitly treat the content as CJKLanguage (.Summary and .WordCount can work properly in CJKLanguage)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;weight&lt;/strong&gt; Used for sorting&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;markup&lt;/strong&gt; (Experimental) Specify &amp;ldquo;rst&amp;rdquo; for reStructuredText (requires rst2html) or &amp;ldquo;md&amp;rdquo; (default) for Markdown&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;slug&lt;/strong&gt; appears as tail of the url. It can be used to change the part of the url that is based on the filename.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;url&lt;/strong&gt; The full path to the content from the web root. It makes no assumptions about the path of the content file. It also ignores any language prefixes of the multilingual feature.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果slug和url都没有设置，filename会被使用。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它设置&#34;&gt;其它设置：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Configure Blackfriday rendering&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo 内容之Sections</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BSections/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BSections/</guid>
+      <description>
+
+&lt;p&gt;Hugo认为，一般来说生成站点内容的结构和源内容结构都一样。
+content为源内容结构的根目录，在这下面的所有直接子目录，都被当作Section  。&lt;/p&gt;
+
+&lt;p&gt;比如：下面的例子，使用两个sections，&amp;rdquo;post&amp;rdquo;和&amp;rdquo;quote&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    .
+└── content
+    ├── post
+    |   ├── firstpost.md       // &amp;lt;- http://1.com/post/firstpost/
+    |   ├── happy
+    |   |   └── ness.md        // &amp;lt;- http://1.com/post/happy/ness/
+    |   └── secondpost.md      // &amp;lt;- http://1.com/post/secondpost/
+    └── quote
+        ├── first.md           // &amp;lt;- http://1.com/quote/first/
+        └── second.md          // &amp;lt;- http://1.com/quote/second/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;sections-列表&#34;&gt;Sections 列表&lt;/h3&gt;
+
+&lt;p&gt;Hugo会根据目录的结构自动生成section。
+当然也可以通过&lt;a href=&#34;https://gohugo.io/templates/list/&#34;&gt;List Templates&lt;/a&gt;）来自定义如何生成。&lt;/p&gt;
+
+&lt;h3 id=&#34;sections-和-types&#34;&gt;Sections　和 Types&lt;/h3&gt;
+
+&lt;p&gt;Sections and Types&lt;/p&gt;
+
+&lt;p&gt;By default everything created within a section will use the content type that matches the section name.&lt;/p&gt;
+
+&lt;p&gt;Section defined in the front matter have the same impact.&lt;/p&gt;
+
+&lt;p&gt;To change the type of a given piece of content, simply define the type in the front matter.&lt;/p&gt;
+
+&lt;p&gt;If a layout for a given type hasn’t been provided, a default type template will be used instead provided it exists.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo主要命令</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E4%B8%BB%E8%A6%81%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E4%B8%BB%E8%A6%81%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+
+&lt;h3 id=&#34;生成站点&#34;&gt;生成站点&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new site
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;添加内容&#34;&gt;添加内容&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;发布站点&#34;&gt;发布站点&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo
+hugo server 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用主题&#34;&gt;使用主题&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;cd themes
+git clone https://github.com/dim0627/hugo_theme_robust.git
+hugo server --theme=hugo_theme_robust --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo内容之支持格式</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8B%E6%94%AF%E6%8C%81%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8B%E6%94%AF%E6%8C%81%E6%A0%BC%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> Hugo内容之组织结构</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8B%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8B%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/</guid>
+      <description>
+
+&lt;p&gt;Huog在使用文件时，将front matter作为其头部。
+Hugo推荐使用Organization来最小化额外配置，这些配置也可以在在front matter当中来重写。&lt;/p&gt;
+
+&lt;h3 id=&#34;organization&#34;&gt;Organization&lt;/h3&gt;
+
+&lt;p&gt;在Hugo当中，不需要任何额外的配置，根据内容存放的目录结构自动生成相应的url。
+Hugo支持内容文件存放在任何层级目录（都位于content目录下）。
+最顶级目录被用作section。&lt;/p&gt;
+
+&lt;p&gt;比如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+└── content
+    └── about
+    |   └── index.md  // &amp;lt;- http://1.com/about/
+    ├── post
+    |   ├── firstpost.md   // &amp;lt;- http://1.com/post/firstpost/
+    |   ├── happy
+    |   |   └── ness.md  // &amp;lt;- http://1.com/post/happy/ness/
+    |   └── secondpost.md  // &amp;lt;- http://1.com/post/secondpost/
+    └── quote
+        ├── first.md       // &amp;lt;- http://1.com/quote/first/
+        └── second.md      // &amp;lt;- http://1.com/quote/second/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;destinations-生成的站点内容&#34;&gt;Destinations(生成的站点内容)&lt;/h4&gt;
+
+&lt;p&gt;使用相同的内容结构来生成相同结构的站点内容。&lt;/p&gt;
+
+&lt;p&gt;通过其它的设置可以达到特殊的控制。&lt;/p&gt;
+
+&lt;p&gt;下面这些都可以进行相应的设置，同时后面的设置会覆盖前面的设置。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;filename&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;设置在文件在URL当中的name。不存在于 front matter。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;slug&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在front matter当中定义，可以代替目标URL当中的filename。
+* filepath&lt;/p&gt;
+
+&lt;p&gt;文件在硬盘当中的实际路径
+* section&lt;/p&gt;
+
+&lt;p&gt;根据在硬盘当中的位置生成，不能在front matter当中生定义,
+* type&lt;/p&gt;
+
+&lt;p&gt;类似section，但是可以在front matter当中定义。
+* path&lt;/p&gt;
+
+&lt;p&gt;可以在front matter当中定义。path会替换文件在硬盘当中的实际路径。
+目录地址同时会生成相同的path，包括setion
+* url
+完整的url。url会重写上面的所有。
+url必须是相对baseURL的路径（以&amp;rdquo;/&amp;ldquo;开始）。
+使用url会忽视 &amp;ndash;uglyURLs设置。&lt;/p&gt;
+
+&lt;h3 id=&#34;hugo路径分解&#34;&gt;Hugo路径分解&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Content (原始内容)&lt;/p&gt;
+
+&lt;p&gt;.             path           slug
+.       ⊢&amp;mdash;&amp;mdash;-^&amp;mdash;-⊣ ⊢&amp;mdash;&amp;mdash;^&amp;mdash;&amp;mdash;-⊣
+content/extras/indexes/category-example/index.html&lt;/p&gt;
+
+&lt;p&gt;.       section              slug
+.       ⊢&amp;ndash;^&amp;ndash;⊣        ⊢&amp;mdash;&amp;mdash;^&amp;mdash;&amp;mdash;-⊣
+content/extras/indexes/category-example/index.html&lt;/p&gt;
+
+&lt;p&gt;.       section  slug
+.       ⊢&amp;ndash;^&amp;ndash;⊣⊢&amp;ndash;^&amp;ndash;⊣
+content/extras/indexes/index.html&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Destination（生成的页面）&lt;/p&gt;
+
+&lt;p&gt;.           permalink
+⊢&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-⊣
+&lt;a href=&#34;http://spf13.com/projects/hugo&#34;&gt;http://spf13.com/projects/hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;baseURL       section  slug
+⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;ndash;⊣ ⊢&amp;ndash;^&amp;mdash;⊣ ⊢-^⊣
+&lt;a href=&#34;http://spf13.com/projects/hugo&#34;&gt;http://spf13.com/projects/hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;baseURL       section          slug
+⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;ndash;⊣ ⊢&amp;ndash;^&amp;ndash;⊣        ⊢&amp;ndash;^&amp;ndash;⊣
+&lt;a href=&#34;http://spf13.com/extras/indexes/example&#34;&gt;http://spf13.com/extras/indexes/example&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;baseURL            path       slug
+⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;ndash;⊣ ⊢&amp;mdash;&amp;mdash;^&amp;mdash;&amp;ndash;⊣ ⊢&amp;ndash;^&amp;ndash;⊣
+&lt;a href=&#34;http://spf13.com/extras/indexes/example&#34;&gt;http://spf13.com/extras/indexes/example&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;baseURL            url
+⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;ndash;⊣ ⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;ndash;⊣
+&lt;a href=&#34;http://spf13.com/projects/hugo&#34;&gt;http://spf13.com/projects/hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;baseURL               url
+⊢&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;ndash;⊣ ⊢&amp;mdash;&amp;mdash;&amp;ndash;^&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;⊣
+&lt;a href=&#34;http://spf13.com/extras/indexes/example&#34;&gt;http://spf13.com/extras/indexes/example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;section = 内容是什么类型的&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基于内容位置&lt;/li&gt;
+&lt;li&gt;front matter重新设置&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;slug = 名称.ext 或者 名称/&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基于内容文件名称&lt;/li&gt;
+&lt;li&gt;front matter重新设置&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;path = section + path + slug&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基于内容文件所处位置&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;url = 相对 URL&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在front matter 定义&lt;/li&gt;
+&lt;li&gt;重写上面所有
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo目录结构</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;archetypes 定义配置属性，无论hugo new 命令在何时使用，这些属性都会添加到 post front matter。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;config.toml 根目录下的配置文件，支持其它格式：YAML JSON。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;content 存放站点的的内容，可以创建子目录，相应的，站点会生成对应的sections。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;data 用来存放用来生成站点时，使用的配置的文件。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;layouts 布局文件，指定如何将content生成站点。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;static 存储静态文件，比如 css、javascript、images等其它静态内容。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;其它不同的目录和目的&#34;&gt;其它不同的目录和目的&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;config &lt;a href=&#34;https://gohugo.io/overview/configuration/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;data &lt;a href=&#34;https://gohugo.io/extras/datafiles/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;i18n &lt;a href=&#34;https://gohugo.io/content/multilingual/#translation-of-strings&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;archetypes &lt;a href=&#34;https://gohugo.io/content/archetypes/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;content &lt;a href=&#34;https://gohugo.io/content/organization/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;layouts &lt;a href=&#34;https://gohugo.io/templates/overview/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;static &lt;a href=&#34;https://gohugo.io/themes/creation/#static&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;themes &lt;a href=&#34;https://gohugo.io/themes/overview/&#34;&gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo简介</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E7%AE%80%E4%BB%8B/</guid>
+      <description>
+
+&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
+
+&lt;p&gt;静态站点生成器&lt;/p&gt;
+
+&lt;h3 id=&#34;general&#34;&gt;General&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;编译速度快&lt;/li&gt;
+&lt;li&gt;跨平台支持&lt;/li&gt;
+&lt;li&gt;易安装&lt;/li&gt;
+&lt;li&gt;开发时实时预览&lt;/li&gt;
+&lt;li&gt;主题支持&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可部署在任何地方，不依赖于任何环境&lt;/p&gt;
+
+&lt;h3 id=&#34;organization&#34;&gt;Organization&lt;/h3&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;结构简单明了&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;支持 站点Section&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;支持完全自定义URLS&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;支持可配置的taxonomies(包含 categories和tages ),创建站点内容的自定义结构&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容排序&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;动态菜单创建&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pretty URLs support&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Permalink pattern support&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Aliases (redirects)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;content&#34;&gt;Content&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Markdown 原生支持&lt;/li&gt;
+&lt;li&gt;在frontmatter当中 支持TOML,YAML,JSON 元数据&lt;/li&gt;
+&lt;li&gt;自定义主页&lt;/li&gt;
+&lt;li&gt;支持多种类型内容&lt;/li&gt;
+&lt;li&gt;在Markdown当中，使用 Shortcodes 丰富内容&lt;/li&gt;
+&lt;li&gt;“Minutes to Read” functionality&lt;/li&gt;
+&lt;li&gt;“Wordcount” functionality&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;additional-features&#34;&gt;Additional Features&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Integrated Disqus comment support&lt;/li&gt;
+&lt;li&gt;Integrated Google Analytics support&lt;/li&gt;
+&lt;li&gt;Automatic RSS creation&lt;/li&gt;
+&lt;li&gt;Support for Go, Amber and Ace HTML templates&lt;/li&gt;
+&lt;li&gt;Syntax highlighting powered by Pygments&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Hugo配置</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://gohugo.io/overview/configuration/#examples&#34;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;配置方式&#34;&gt;配置方式&lt;/h3&gt;
+
+&lt;h4 id=&#34;hugo环境变量&#34;&gt;hugo环境变量&lt;/h4&gt;
+
+&lt;p&gt;env HUGO_TITLE=&amp;ldquo;Some Title&amp;rdquo; hugo&lt;/p&gt;
+
+&lt;h4 id=&#34;配置文件&#34;&gt;配置文件&lt;/h4&gt;
+
+&lt;p&gt;配置支持格式：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TOML&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;YAML&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JSON&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在这个配置文件里，可以通过配置参数，精确的指示hugo 如何渲染站点，同时，还可以定义菜单，以及其它一些全站范围内可以使用的参数。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置变量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下面这些是配置文件当中可以配置的hugo变量，以及他们的默念值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+archetypedir:               &amp;quot;archetype&amp;quot;
+# hostname (and path) to the root, e.g. http://spf13.com/
+baseURL:                    &amp;quot;&amp;quot;
+# include content marked as draft
+buildDrafts:                false
+# include content with publishdate in the future
+buildFuture:                false
+# include content already expired
+buildExpired:               false
+# enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+relativeURLs:               false
+canonifyURLs:               false
+# config file (default is path/config.yaml|json|toml)
+config:                     &amp;quot;config.toml&amp;quot;
+contentdir:                 &amp;quot;content&amp;quot;
+dataDir:                    &amp;quot;data&amp;quot;
+defaultExtension:           &amp;quot;html&amp;quot;
+defaultLayout:              &amp;quot;post&amp;quot;
+# Missing translations will default to this content language
+DefaultContentLanguage:     &amp;quot;en&amp;quot;
+# Renders the default content language in subdir, e.g. /en/. The root directory / will redirect to /en/
+DefaultContentLanguageInSubdir: false
+disableLiveReload:          false
+# Do not build RSS files
+disableRSS:                 false
+# Do not build Sitemap file
+disableSitemap:             false
+# Build robots.txt file
+enableRobotsTXT:            false
+# Do not render 404 page
+disable404:                 false
+# Do not inject generator meta tag on homepage
+disableHugoGeneratorInject: false
+# edit new content with this editor, if provided
+editor:                     &amp;quot;&amp;quot;
+# Enable Emoji emoticons support for page content.
+# See www.emoji-cheat-sheet.com
+enableEmoji:                false
+# Show a placeholder instead of the default value or an empty string if a translation is missing
+enableMissingTranslationPlaceholders: false
+footnoteAnchorPrefix:       &amp;quot;&amp;quot;
+footnoteReturnLinkContents: &amp;quot;&amp;quot;
+# google analytics tracking id
+googleAnalytics:            &amp;quot;&amp;quot;
+languageCode:               &amp;quot;&amp;quot;
+layoutdir:                  &amp;quot;layouts&amp;quot;
+# Enable Logging
+log:                        false
+# Log File path (if set, logging enabled automatically)
+logFile:                    &amp;quot;&amp;quot;
+# &amp;quot;yaml&amp;quot;, &amp;quot;toml&amp;quot;, &amp;quot;json&amp;quot;
+metaDataFormat:             &amp;quot;toml&amp;quot;
+newContentEditor:           &amp;quot;&amp;quot;
+# Don&#39;t sync modification time of files
+noTimes:                    false
+paginate:                   10
+paginatePath:               &amp;quot;page&amp;quot;
+permalinks:
+# Pluralize titles in lists using inflect
+pluralizeListTitles:        true
+# Preserve special characters in taxonomy names (&amp;quot;Gérard Depardieu&amp;quot; vs &amp;quot;Gerard Depardieu&amp;quot;)
+preserveTaxonomyNames:      false
+# filesystem path to write files to
+publishdir:                 &amp;quot;public&amp;quot;
+# enables syntax guessing for code fences without specified language
+pygmentsCodeFencesGuessSyntax: false
+# color-codes for highlighting derived from this style
+pygmentsStyle:              &amp;quot;monokai&amp;quot;
+# true: use pygments-css or false: color-codes directly
+pygmentsUseClasses:         false
+# default sitemap configuration map
+sitemap:
+# filesystem path to read files relative from
+source:                     &amp;quot;&amp;quot;
+staticdir:                  &amp;quot;static&amp;quot;
+# display memory and timing of different steps of the program
+stepAnalysis:               false
+# theme to use (located by default in /themes/THEMENAME/)
+themesdir:                  &amp;quot;themes&amp;quot;
+theme:                      &amp;quot;&amp;quot;
+title:                      &amp;quot;&amp;quot;
+# if true, use /filename.html instead of /filename/
+uglyURLs:                   false
+# Do not make the url/path to lowercase
+disablePathToLower:         false
+# if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
+hasCJKLanguage:             false
+# verbose output
+verbose:                    false
+# verbose logging
+verboseLog:                 false
+# watch filesystem for changes and recreate as needed
+watch:                      true
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;排除文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;渲染的时候，排除的文件 。
+比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ignoreFiles = [ &amp;quot;\\.foo$&amp;quot;, &amp;quot;\\.boo$&amp;quot; ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Configure Blackfriday rendering&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Blackfriday 是Hugo的Markdown 渲染引擎。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Taxonomies(分类)</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29/</guid>
+      <description>
+
+&lt;p&gt;Taxonomies，Hugo用于支持用户自定义内容的分组、分类。&lt;/p&gt;
+
+&lt;p&gt;Taxonomies 提供了我们将内容分类和在内容之间建立联系的方法。&lt;/p&gt;
+
+&lt;p&gt;默认的taxonomies是tags和categories。
+但是可以扩展和自定义。
+当taxnonmies被使用时（同时提供了templates），Hugo会自动的创建页面列出所有的taxnonmies，以及他们之间所有的联系。&lt;/p&gt;
+
+&lt;h3 id=&#34;定义&#34;&gt;定义&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Taxonomy: 一个可以用于将内容分类编排的分类方法。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Term: A key within that taxonomy&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Value: A piece of content assigned to that Term&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;例子&#34;&gt;例子&lt;/h3&gt;
+
+&lt;p&gt;比如一个关于电影的站点，需要以下分类
+* Actors
+* Directors
+* Stuidios
+* Genre
+* Year
+* Awards&lt;/p&gt;
+
+&lt;p&gt;通过在在所有内容的fornt-matter提供以上分类的terms。
+Hugo会自动根据这些产生分类的列表页面（根据以上分类）&lt;/p&gt;
+
+&lt;p&gt;分类组织
+通过taxonomy的角度来看。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Actor                    &amp;lt;- Taxonomy
+    Bruce Willis         &amp;lt;- Term
+        The Six Sense    &amp;lt;- Content
+        Unbreakable      &amp;lt;- Content
+        Moonrise Kingdom &amp;lt;- Content
+    Samuel L. Jackson    &amp;lt;- Term
+        Unbreakable      &amp;lt;- Content
+        The Avengers     &amp;lt;- Content
+        xXx              &amp;lt;- Content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通过content的角度的来看。视图会不太一样。但是，数据和分类都完全是一样的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Unbreakable                 &amp;lt;- Content
+    Actors                  &amp;lt;- Taxonomy
+        Bruce Willis        &amp;lt;- Term
+        Samuel L. Jackson   &amp;lt;- Term
+    Director                &amp;lt;- Taxonomy
+        M. Night Shyamalan  &amp;lt;- Term
+    ...
+Moonrise Kingdom            &amp;lt;- Content
+    Actors                  &amp;lt;- Taxonomy
+        Bruce Willis        &amp;lt;- Term
+        Bill Murray         &amp;lt;- Term
+    Director                &amp;lt;- Taxonomy
+        Wes Anderson        &amp;lt;- Term
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Taxonomies(分类)的使用</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>
+
+&lt;h4 id=&#34;定义一个站点的分类&#34;&gt;定义一个站点的分类&lt;/h4&gt;
+
+&lt;p&gt;分类标准需要在被使用前，提前在站点当中配置。&lt;/p&gt;
+
+&lt;p&gt;比如：在config.toml当中配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[taxonomies]
+tag = &amp;quot;tags&amp;quot;
+category = &amp;quot;categories&amp;quot;
+series = &amp;quot;series&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或者在config.yaml当中配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;taxonomies:
+  tag: &amp;quot;tags&amp;quot;
+  category: &amp;quot;categories&amp;quot;
+  series: &amp;quot;series&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;网站现在会根据Cotent当中fronat-matter设置的
+tags catgories series的值来进行自动的分类。&lt;/p&gt;
+
+&lt;p&gt;比如：
+Front Matter Example (in TOML)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+title = &amp;quot;Hugo: A fast and flexible static site generator&amp;quot;
+tags = [ &amp;quot;Development&amp;quot;, &amp;quot;Go&amp;quot;, &amp;quot;fast&amp;quot;, &amp;quot;Blogging&amp;quot; ]
+categories = [ &amp;quot;Development&amp;quot; ]
+series = [ &amp;quot;Go Web Dev&amp;quot; ]
+slug = &amp;quot;hugo&amp;quot;
+project_url = &amp;quot;https://github.com/spf13/hugo&amp;quot;
++++
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Taxonomies(分类)的排序</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E6%8E%92%E5%BA%8F/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/taxonomies/ordering/&#34;&gt;https://gohugo.io/taxonomies/ordering/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Taxonomies(分类)的显示</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E6%98%BE%E7%A4%BA/</guid>
+      <description>&lt;p&gt;主要用于模板&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo Taxonomies(分类)的结构和方法</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20Taxonomies%28%E5%88%86%E7%B1%BB%29%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/taxonomies/methods/&#34;&gt;https://gohugo.io/taxonomies/methods/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 内容之Archetypes</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BArchetypes/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BArchetypes/</guid>
+      <description>
+
+&lt;p&gt;主要用于，当使用hugo new命令创建新的内容文件时，自动产生相应的front matter 头部内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;例子&#34;&gt;例子&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Creating an archetype&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;archetypes/default.md&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;+++
+tags = [&amp;ldquo;x&amp;rdquo;, &amp;ldquo;y&amp;rdquo;]
+categories = [&amp;ldquo;x&amp;rdquo;, &amp;ldquo;y&amp;rdquo;]
++++&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当创建时，会自动加上上面这些字符。&lt;/p&gt;
+
+&lt;h3 id=&#34;创建自定义格式&#34;&gt;创建自定义格式&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;archetypes/musician.md&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+name = &amp;quot;&amp;quot;
+bio = &amp;quot;&amp;quot;
+genre = &amp;quot;&amp;quot;
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new musician/mozart.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个时候，Hugo使用的不再是archetypes当中默认的。而是使用&lt;strong&gt;archetypes/musician.md&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;何时使用相应的archetype&#34;&gt;何时使用相应的archetype&lt;/h4&gt;
+
+&lt;p&gt;当创建一个新内容文件时，有如下规则：
+* 如果有一个archetype里的文件名与新创建的内容文件类型一样，会被使用。
+* 如果没有，会使用 ==archetypes/default.md==
+* 如果两个都没有，会使用主题里的
+    * 在主题里，重复上面两个步骤&lt;/p&gt;
+
+&lt;p&gt;Hugo provides a simple archetype which sets the title (based on the file name) and the date in RFC 3339 format based on now(), which returns the current time.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: hugo new does not automatically add draft = true when the user provides an archetype. This is by design, rationale being that the archetype should set its own value for all fields. title and date, which are dynamic and unique for each piece of content, are the sole exceptions.
+The content type is automatically detected based on the file path passed to the Hugo CLI command hugo new [my-content-type/post-name]. To override the content type for a new post, include the &amp;ndash;kind flag during creation.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo 内容之Ordering</title>
+      <link>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BOrdering/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuxianmei.github.io/hugo/Hugo%20%E5%86%85%E5%AE%B9%E4%B9%8BOrdering/</guid>
+      <description>&lt;p&gt;主要用来组织内容文件之间的排序问题&lt;/p&gt;
+
+&lt;p&gt;默认，排序参照：weight，然后date ，标题和链接标题也可以使用，排序相关主要在list template当中。
+By default, content is ordered by weight, then by date with the most recent date first, but alternative sorting (by title and linktitle) is also available. The order the content would appear is specified in the list template.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;比如:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+weight = 4
+title = &amp;quot;Three&amp;quot;
+date = &amp;quot;2012-04-06&amp;quot;
++++
+Front Matter with Ordered Pages 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ordering Content Within Taxonomies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please see the &lt;a href=&#34;https://gohugo.io/taxonomies/ordering/&#34;&gt;Taxonomy Ordering Documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
