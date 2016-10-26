@@ -2,6 +2,7 @@
 date = "2016-04-24T16:56:42+08:00"
 draft = false
 title = " Markdown语法总结"
+categories=["Markdown"]
 +++
 
 ## 语法介绍
@@ -286,7 +287,8 @@ Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的�
 	.   英文句点
 	!   惊叹号
 
-`注：排版布局、段落啥的，主要使用区块引用和列表来完成。`
+`注：排版布局、段落啥的，主要使用区块引用和列表来完成。`  
+
 文章引用:http://www.appinn.com/markdown/#precode
 
  
